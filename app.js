@@ -10,7 +10,7 @@ const app = express();
 
 const swaggerUI = require("swagger-ui-express");
 const YAML = require("yamljs");
-const swaggerDocument = YAML.load("./swagger.yamle");
+const swaggerDocument = YAML.load("./swagger.yaml");
 
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
@@ -51,7 +51,7 @@ app.use(cookieParser(process.env.JWT_SECRET));
 app.use(express.static("./public"));
 app.use(fileUpload());
 
-app.get("/", () => {
+app.get("/", (req, res) => {
   res.send('<h1>E-Commerce</h1><a href="/api-docs">Documentation</a>');
 });
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
