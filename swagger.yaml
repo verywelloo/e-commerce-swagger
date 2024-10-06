@@ -3,7 +3,7 @@ info:
   title: 10-E-commerce
   version: 1.0.0
 servers:
-  - url: http://localhost:5000
+  - url: https://e-commerce-swagger.onrender.com
 tags:
   - name: auth
   - name: user
@@ -15,7 +15,7 @@ components:
     bearerAuth:
       type: http
       scheme: bearer
-      bearerFormat: JWT  # Optional, indicates the token type
+      bearerFormat: JWT # Optional, indicates the token type
       description: The Token values do not need " "
 paths:
   /api/v1/auth/login:
@@ -32,7 +32,7 @@ paths:
                 email: peter@gmail.com
                 password: secret
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -51,7 +51,7 @@ paths:
                 email: peter@gmail.com
                 password: secret
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -61,7 +61,7 @@ paths:
         - auth
       summary: Logout User
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -73,7 +73,7 @@ paths:
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -92,7 +92,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -104,7 +104,7 @@ paths:
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -124,7 +124,7 @@ paths:
                 name: susanUpdated
                 email: susan@gmail.com
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -144,7 +144,7 @@ paths:
                 oldPassword: newSecret
                 newPassword: secret
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -154,7 +154,7 @@ paths:
         - product
       summary: Get All Products
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -173,14 +173,14 @@ paths:
                 name: testing
                 price: 25999
                 colors:
-                  - '#ff0000'
-                  - '#00ff00'
-                  - '#0000ff'
+                  - "#ff0000"
+                  - "#00ff00"
+                  - "#0000ff"
                 company: marcos
                 description: a big black box
                 category: office
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -197,7 +197,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -222,7 +222,7 @@ paths:
               example:
                 name: updated product
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -240,7 +240,7 @@ paths:
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -261,7 +261,7 @@ paths:
                   type: string
                   format: binary
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -278,7 +278,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -290,7 +290,7 @@ paths:
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -306,12 +306,12 @@ paths:
             schema:
               type: object
               example:
-                product: '123'
-                rating: '1'
+                product: "123"
+                rating: "1"
                 title: bad product
                 comment: very, very bad product
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -328,7 +328,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -351,12 +351,12 @@ paths:
             schema:
               type: object
               example:
-                product: '123'
-                rating: '5'
+                product: "123"
+                rating: "5"
                 title: bad product
                 comment: very, very bad product
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -374,7 +374,7 @@ paths:
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -386,7 +386,7 @@ paths:
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -416,7 +416,7 @@ paths:
                     amount: 2
                     product: 66cb135626e150f398e09b78
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -435,7 +435,7 @@ paths:
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -460,7 +460,7 @@ paths:
               example:
                 paymentIntentId: someRandomId
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -472,7 +472,7 @@ paths:
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
