@@ -1,14 +1,16 @@
 require("dotenv").config();
 require("express-async-errors");
 
+// cookie
+// -in frontend, don't doing much more
+// -more secure in httpOnly
+// -downside, it is a little size
 const express = require("express");
 const app = express();
 
 const swaggerUI = require("swagger-ui-express");
 const YAML = require("yamljs");
 const swaggerDocument = YAML.load("./swagger.yaml");
-const fs = require("fs");
-const path = require("path");
 
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
@@ -30,37 +32,30 @@ const orderRouter = require("./routes/orderRoutes");
 const notFoundMiddleware = require("./middleware/not-found");
 const errorHandlerMiddleware = require("./middleware/error-handler");
 
-// Read the dark theme CSS file
-const customCss = fs.readFileSync(
-  path.join(__dirname, "swaggerDark.css"),
-  "utf8"
-);
-
 app.set("trust proxy");
-
 app.use(
   rateLimiter({
-    windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 60, // limit each IP to 60 requests per windowMs
+    windowMs: 15 * 60 * 1000,
+    max: 60,
   })
 );
 
-app.use(helmet()); // Security headers
-app.use(cors()); // Allow cross-origin requests
-app.use(xss()); // Prevent XSS attacks
-app.use(mongoSanitize()); // Prevent NoSQL injections
+app.use(helmet()); //security for header
+app.use(cors()); // let others domain access, for cookies
+app.use(xss()); // security for input
+app.use(mongoSanitize()); // security for mongo
 
 app.use(express.json());
 app.use(cookieParser(process.env.JWT_SECRET));
+
 app.use(express.static("./public"));
 app.use(fileUpload());
 
-// Swagger UI with dark theme
-app.use(
-  "/api-docs",
-  swaggerUI.serve,
-  swaggerUI.setup(swaggerDocument, { customCss })
-);
+// app.get("/", (req, res) => {
+//   res.send('<h1>E-Commerce</h1><a href="/api-docs">Documentation</a>');
+// });
+
+app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/users", userRouter);

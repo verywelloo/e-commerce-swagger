@@ -1,0 +1,28 @@
+/*sans-serif*/
+body {
+    background-color: #181a1b;  
+    font: 1em sans-serif;
+}
+
+.main {
+    display: flex;
+    font-size: 26px;
+    color: antiquewhite;
+    text-align: center;
+    justify-content: center;
+    margin-top: 250px;
+}
+
+.shoppingImg {
+    width: 450px;
+    margin-left: 50px;
+}
+
+.text {
+    margin-bottom: 55px;
+    line-height: 0.3em;
+}
+
+.firstBnt {
+    margin-right: none;
+}
