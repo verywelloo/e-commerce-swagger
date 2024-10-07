@@ -32,7 +32,7 @@ const errorHandlerMiddleware = require("./middleware/error-handler");
 
 // Read the dark theme CSS file
 const customCss = fs.readFileSync(
-  path.join(__dirname, "swaggerDark.css"),
+  path.join(__dirname, "SwaggerDark.css"),
   "utf8"
 );
 
