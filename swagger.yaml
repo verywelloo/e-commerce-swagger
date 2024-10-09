@@ -5,9 +5,9 @@ info:
 servers:
   - url: https://e-commerce-swagger.onrender.com
 tags:
-  - name: auth
-  - name: user
-  - name: product
+  - name: Auth
+  - name: User
+  - name: Product
   - name: Review
   - name: Order
 components:
@@ -21,7 +21,7 @@ paths:
   /api/v1/auth/login:
     post:
       tags:
-        - auth
+        - Auth
       summary: Login User
       requestBody:
         content:
@@ -39,7 +39,7 @@ paths:
   /api/v1/auth/register:
     post:
       tags:
-        - auth
+        - Auth
       summary: Register User
       requestBody:
         content:
@@ -58,7 +58,7 @@ paths:
   /api/v1/auth/logout:
     get:
       tags:
-        - auth
+        - Auth
       summary: Logout User
       responses:
         "200":
@@ -68,7 +68,7 @@ paths:
   /api/v1/users:
     get:
       tags:
-        - user
+        - User
       summary: Get All Users
       security:
         - bearerAuth: []
@@ -80,7 +80,7 @@ paths:
   /api/v1/users/{id}:
     get:
       tags:
-        - user
+        - User
       summary: Get Single User
       security:
         - bearerAuth: []
@@ -111,7 +111,7 @@ paths:
   /api/v1/users/updateUser:
     patch:
       tags:
-        - user
+        - User
       summary: Update User
       security:
         - bearerAuth: []
@@ -131,7 +131,7 @@ paths:
   /api/v1/users/updateUserPassword:
     patch:
       tags:
-        - user
+        - User
       summary: Update User Password
       security:
         - bearerAuth: []
@@ -151,7 +151,7 @@ paths:
   /api/v1/products:
     get:
       tags:
-        - product
+        - Product
       summary: Get All Products
       responses:
         "200":
@@ -160,7 +160,7 @@ paths:
             application/json: {}
     post:
       tags:
-        - product
+        - Product
       summary: Create Product
       security:
         - bearerAuth: []
@@ -187,7 +187,7 @@ paths:
   /api/v1/products/{id}:
     get:
       tags:
-        - product
+        - Product
       summary: Get Single Product
       parameters:
         - in: path
@@ -203,7 +203,7 @@ paths:
             application/json: {}
     patch:
       tags:
-        - product
+        - Product
       summary: Update Product
       parameters:
         - in: path
@@ -228,7 +228,7 @@ paths:
             application/json: {}
     delete:
       tags:
-        - product
+        - Product
       summary: Delete Product
       parameters:
         - in: path
@@ -247,7 +247,7 @@ paths:
   /api/v1/products/uploadImage:
     post:
       tags:
-        - product
+        - Product
       summary: Upload Image
       security:
         - bearerAuth: []
@@ -268,7 +268,7 @@ paths:
   /api/v1/products/{id}/reviews:
     get:
       tags:
-        - product
+        - Product
       summary: Get Single Product Review
       parameters:
         - in: path
