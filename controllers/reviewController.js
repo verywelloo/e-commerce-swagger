@@ -65,7 +65,6 @@ const updateReview = async (req, res) => {
   await review.save();
 
   res.status(StatusCodes.OK).json({ review });
-  res.send("update review");
 };
 
 const deleteReview = async (req, res) => {
