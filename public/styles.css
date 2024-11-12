@@ -14,8 +14,8 @@ body {
 }
 
 .shoppingImg {
-    width: 450px;
-    margin-left: 50px;
+    width: 350px;
+    margin-left: 150px;
 }
 
 .text {
@@ -25,4 +25,8 @@ body {
 
 .firstBnt {
     margin-right: none;
+}
+
+.submain {
+    
 }
